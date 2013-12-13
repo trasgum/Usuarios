@@ -64,7 +64,7 @@ def after_login(resp):
     if 'remember_me' in session:
         remember_me = session['remeber_me']
         session.pop('remeber_me', None)
-    login_user(user, remember_me = remember_me)
+    login_user(user, remember = remember_me)
     return redirect(request.args.get('next') or url_for('index'))
 
 @app.route('/logout')
